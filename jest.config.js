@@ -2,8 +2,11 @@ module.exports = {
   setupFilesAfterEnv: ["./jest.setup.ts"],
   testEnvironment: "jsdom",
   transform: {
-    "^.+\\.tsx?$": "ts-jest",
+    "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest"
   },
+  transformIgnorePatterns:[
+    "node_modules/(?!variables/.*)"
+  ],
   extensionsToTreatAsEsm: [".ts", ".tsx"],
   globals: {
     "ts-jest": {
